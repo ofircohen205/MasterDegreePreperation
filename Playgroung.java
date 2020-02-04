@@ -77,9 +77,24 @@ class Playground {
             result[i][0] = lcsNode;
         }
         
-        for(int i = 0; i < a.length(); i++){
-            for(int j = 0; j < b.length(); j++){
-                
+        for(int i = 1; i < a.length(); i++){
+            for(int j = 1; j < b.length(); j++){
+                if(a.charAt(i - 1) == b.charAt(j - 1)){
+                    int value = result[i - 1][j - 1].getValue() + 1;
+                    LcsNode lcsNode = new LcsNode(i - 1, j - 1, value);
+                    result[i][j] = lcsNode;
+                }else{
+                    LcsNode lcsNode = null;
+                    int value1 = result[i - 1][j].getValue();
+                    int value2 = result[i][j - 1].getValue();
+                    if(value1 > value2){
+                        lcsNode = new LcsNode(i - 1, j, value1);
+                    }
+                    else{
+                        lcsNode = new LcsNode(i, j - 1, value2);
+                    }
+                    result[i][j] = lcsNode;
+                }
             }
         }
         
@@ -91,5 +106,11 @@ class Playground {
             System.out.println("");
         }
         
+        /* For example: Longest common subsequence("ABCD","ACBAD")
+            00000
+            01111
+            01122
+            01222
+        */
     }
 }

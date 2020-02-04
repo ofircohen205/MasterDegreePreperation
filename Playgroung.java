@@ -60,16 +60,36 @@ class Playground {
         
         LcsNode[][] result = new LcsNode[row][columns];
         
-        // Initilizer
+        /* Initilizer
+            00000
+            0
+            0
+            0
+        */
+        
         for(int i = 0; i < result[0].length; i++){
             LcsNode lcsNode = new LcsNode(0, i, 0);
             result[0][i] = lcsNode;
+        }
+        
+        for(int i = 0; i < result.length; i++){
+            LcsNode lcsNode = new LcsNode(i, 0, 0);
+            result[i][0] = lcsNode;
         }
         
         for(int i = 0; i < a.length(); i++){
             for(int j = 0; j < b.length(); j++){
                 
             }
-        }   
+        }
+        
+        for(int i = 0; i < a.length(); i++){
+            for(int j = 0; j < b.length(); j++){
+                if(result[i][j] != null)
+                    System.out.print(result[i][j].getValue());
+            }
+            System.out.println("");
+        }
+        
     }
 }

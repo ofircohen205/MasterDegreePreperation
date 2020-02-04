@@ -1,20 +1,20 @@
 class LcsNode{
     
-    private double x;
-    private double y;
+    private int x;
+    private int y;
     private int value;
     
-    public LcsNode(double x, double y, int value) {
+    public LcsNode(int x, int y, int value) {
         this.x = x;
         this.y = y;
         this.value = value;
     }
 
-    public double getX() { return x; }
-    public double getY() { return y; }
+    public int getX() { return x; }
+    public int getY() { return y; }
     public int getValue() { return value; }
-    public void setX(double x) { this.x = x; }
-    public void setY(double y) { this.y = y; }
+    public void setX(int x) { this.x = x; }
+    public void setY(int y) { this.y = y; }
     public void setValue(int value) { this.value = value; }
 }
 
@@ -22,6 +22,7 @@ class Playground {
     public static void main(String[ ] args) {
         int[] a = {10, 9, 20, 33, 24, 1, 30, 40, 50, 60};
         System.out.println(lis(a));
+        lcs("ABCD","ACBAD");
     }
     
     /*
@@ -105,6 +106,16 @@ class Playground {
                     System.out.print(result[i][j].getValue());
             }
             System.out.println("");
+        }
+
+        int i = rows - 1, j = columns - 1;
+
+        while(i > 0 && j > 0){
+            if(result[i][j].getX() == i - 1 &&  result[i][j].getY() == j - 1){
+                System.out.print(b.charAt(j - 1));
+            }
+            i = result[i][j].getX();
+            j = result[i][j].getY();
         }
         
         /* For example: Longest common subsequence("ABCD","ACBAD")

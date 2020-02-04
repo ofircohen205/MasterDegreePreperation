@@ -54,30 +54,31 @@ class Playground {
     /*
         Longest common subsequence problem (O(n^2))
     */
-    public static void lcs(String a, String b) {
+     public static void lcs(String a, String b) {
         
-        int row = a.length() + 1, columns = b.length() + 1;
+        int rows = a.length() + 1, columns = b.length() + 1;
         
-        LcsNode[][] result = new LcsNode[row][columns];
+        LcsNode[][] result = new LcsNode[rows][columns];
         
         /* Initilizer
-            00000
+            000000
+            0
             0
             0
             0
         */
         
-        for(int i = 0; i < result[0].length; i++){
+        for(int i = 0; i < columns; i++){
             LcsNode lcsNode = new LcsNode(0, i, 0);
             result[0][i] = lcsNode;
         }
         
-        for(int i = 0; i < result.length; i++){
+        for(int i = 0; i < rows; i++){
             LcsNode lcsNode = new LcsNode(i, 0, 0);
             result[i][0] = lcsNode;
         }
         
-        for(int i = 1; i < row; i++){
+        for(int i = 1; i < rows; i++){
             for(int j = 1; j < columns; j++){
                 if(a.charAt(i - 1) == b.charAt(j - 1)){
                     int value = result[i - 1][j - 1].getValue() + 1;
@@ -98,8 +99,8 @@ class Playground {
             }
         }
         
-        for(int i = 0; i < a.length(); i++){
-            for(int j = 0; j < b.length(); j++){
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < columns; j++){
                 if(result[i][j] != null)
                     System.out.print(result[i][j].getValue());
             }
@@ -107,10 +108,11 @@ class Playground {
         }
         
         /* For example: Longest common subsequence("ABCD","ACBAD")
-            00000
-            01111
-            01122
-            01222
+            000000
+            011111
+            011222
+            012222
+            012223
         */
     }
 }

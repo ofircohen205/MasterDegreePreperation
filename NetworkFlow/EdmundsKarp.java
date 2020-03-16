@@ -1,0 +1,7 @@
+/**
+ * EdmundsKarp
+ */
+public class EdmundsKarp {
+
+    
+}

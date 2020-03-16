@@ -18,7 +18,7 @@ class LcsNode{
     public void setValue(int value) { this.value = value; }
 }
 
-class Playground {
+class LisLcs {
     public static void main(String[ ] args) {
         int[] a = {10, 9, 20, 33, 24, 1, 30, 40, 50, 60};
         System.out.println(lis(a));

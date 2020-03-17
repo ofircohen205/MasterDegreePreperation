@@ -1,4 +1,11 @@
-import DataStructures.Graph;
+import DataStructures.WightedDirectedGraph.Graph;
+import DataStructures.WightedDirectedGraph.Vertex;
+
+import java.util.ArrayList;
+
+import DataStructures.WightedDirectedGraph.Edge;
+
+
 
 /**
  * Main
@@ -6,7 +13,15 @@ import DataStructures.Graph;
 public class Main {
 
     public static void main(String[] args) {
-        Graph g = new Graph();
+        Graph G = new Graph();
         
+        // Adding Vertecies
+        String[] labels = {"S", "A", "E", "B", "C", "D", "F", "H", "Q", "T"};
+        for (String label: labels){
+            G.addVertex(new Vertex(label));
+        }
+
+        System.out.println(G);
+
     }
 }

@@ -1,7 +1,9 @@
+package NetworkFlow;
+
 /**
- * EdmundsKarp
+ * InnerEdmundsKarp
  */
 public class EdmundsKarp {
-
+    
     
 }

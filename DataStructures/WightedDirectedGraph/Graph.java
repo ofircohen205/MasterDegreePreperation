@@ -1,7 +1,7 @@
 package DataStructures.WightedDirectedGraph;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -18,20 +18,45 @@ public class Graph{
         
     // constructor  
     public Graph() {  
-        vertices = new HashSet<>();
+        vertices = new LinkedHashSet<>();
+    }
+
+    public Vertex getRoot(){
+        return getVertex(new ArrayList<>(vertices).get(0));
+    }
+
+    public Vertex getSink(){
+        return getVertex(new ArrayList<>(vertices).get(vertices.size() - 1));
     }
 
     public List<Vertex> getVertices() {
         return new ArrayList<>(vertices);
     }
 
+    public Vertex getVertex(Vertex vertex) {
+        for(Vertex v : vertices){
+            if(v.equals(vertex)){
+                return v;
+            }
+        }
+        return null;
+    }
+
+    public boolean addEdge(Vertex v1, Vertex v2, int capacity, int value) {
+        if ( !vertices.contains(v1) || !vertices.contains(v2) ) {return false; }
+        Edge edge = new Edge(capacity, value, v2);
+        v1.addEdge(edge);
+        return true;
+    }
+
     public boolean addVertex(Vertex vertex){
-        return vertices.add(vertex);
+        return !vertices.contains(vertex) && vertices.add(vertex);
     }
 
     public void removeVertex(Vertex vertex) {
-        /* TODO: remove all connected edges */
-        vertices.remove(vertex);
+        // Undone for now, need to seperate for all cases;
+        // Root, Middle, Sink
+        // TODO: Remove vertex and edges
     }
 
     public void removeEdge(Vertex from, Vertex to){
@@ -49,15 +74,13 @@ public class Graph{
     @Override
     public String toString() {
         String res = "";
-        int count = 0;
-        for(Vertex v : vertices){
-            if(count < vertices.size() - 1){
-                res += v.toString() + " ---> ";
+        ArrayList<Vertex> vertices = new ArrayList<>(this.vertices);
+        for(int i = 0; i < vertices.size() - 1; i++){
+            Vertex v = vertices.get(i);
+            res += v;
+            for(Edge e: v.getEdges()){
+                res += e + "\n";
             }
-            else{
-                res += v.toString();
-            }
-            count++;
         }
         return res;
     }

@@ -36,7 +36,7 @@ public class Edge{
 
     @Override
     public String toString() {
-        return "Edge [" + capacity + "/" + value + "]";
+        return " ---> Edge [" + value + "/" + capacity + "] ---> " + to.toString();
     }
 
     

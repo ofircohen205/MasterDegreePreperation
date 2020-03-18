@@ -128,30 +128,4 @@ class LisLcs {
         */
     }
 
-    public static boolean isPrime(int n){
-        for(int i = 2; i < n/2; i++){
-            if(n % i == 0){
-                return false;
-            }
-        }
-        return true;
-    }
-    
-    public static void primeDividers(int n){
-        int i = 2;
-        while(n > 0 && !isPrime(n)){
-            
-            if(n % i == 0 && isPrime(i)){
-                System.out.print(i + ", ");
-                n = n/i;
-                i = 2;
-                continue;
-            }
-            i++;
-        }
-        
-        if(n != 0){
-           System.out.print(n); 
-        }
-    }
 }

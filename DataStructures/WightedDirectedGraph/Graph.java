@@ -1,4 +1,4 @@
-package DataStructures.WightedDirectedGraph;
+package WightedDirectedGraph;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;

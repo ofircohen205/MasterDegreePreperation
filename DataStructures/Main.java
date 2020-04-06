@@ -1,6 +1,5 @@
-package DataStructures;
-import DataStructures.WightedDirectedGraph.Graph;
-import DataStructures.WightedDirectedGraph.Vertex;
+import WightedDirectedGraph.Graph;
+import WightedDirectedGraph.Vertex;
 
 /**
  * Main

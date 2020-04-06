@@ -26,6 +26,20 @@ public class Heap<T extends Comparable<T>>{
         // Adding to heap
     }
 
+    /*
+     Add element to Heap, Complexity : log(n)
+    */
+    public void add(T element){
+
+    }
+
+    /*
+     Remove element to Heap, Complexity : log(n)
+    */
+    public void remove(T element){
+
+    }
+
     public ArrayList<T> getElements() {
         return elements;
     }
@@ -49,6 +63,4 @@ public class Heap<T extends Comparable<T>>{
     public void setMinimum(boolean isMinimum) {
         this.isMinimum = isMinimum;
     }
-
-    
 }

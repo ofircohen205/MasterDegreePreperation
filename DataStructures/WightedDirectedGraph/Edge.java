@@ -1,4 +1,4 @@
-package DataStructures.WightedDirectedGraph;
+package WightedDirectedGraph;
 
 public class Edge{
     private int capacity, value;

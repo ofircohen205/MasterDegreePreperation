@@ -8,6 +8,12 @@ public class Main {
         System.out.println(recursiveBinarySearch(arr, 0, arr.length - 1, 5));
     }
 
+    /*
+        Generic recursive binary search
+        Time complexity = O(log(n)) why ?
+        The recursion formula is: t(n) = t(n/2) + 1
+        From master theorm a = 1, b = 2, f(n) = 1 -> f(n) = theta(n^0) therfore t(n) = O(log(n))
+    */
     public static boolean recursiveBinarySearch(E[] arr, int low, int high, E query){
         if(low > high){
             return false;

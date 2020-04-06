@@ -1,5 +1,6 @@
 package Heap;
 
+import java.util.ArrayList;
 /**
  * Heap
  * Number of leafs = 2^(h - 1)
@@ -9,28 +10,27 @@ package Heap;
  */
 public class Heap<T extends Comparable<T>>{
 
-    private static final int DEFAULT_CAPACITY = 10;
-    private T[] elements;
+    private ArrayList<T> elements;
     private int size;
     private boolean isMinimum = true;
 
     public Heap(){
-        this.elements = (T[]) new Comparable[DEFAULT_CAPACITY];
+        this.elements = new ArrayList<T>();
         this.size = 0;
     }
 
-    public Heap(T[] array, boolean isMinimum){
+    public Heap(ArrayList<T> array, boolean isMinimum){
         this.elements = array;
         this.isMinimum = isMinimum;
         
         // Adding to heap
     }
 
-    public T[] getElements() {
+    public ArrayList<T> getElements() {
         return elements;
     }
 
-    public void setElements(T[] elements) {
+    public void setElements(ArrayList<T> elements) {
         this.elements = elements;
     }
 

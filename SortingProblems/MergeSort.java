@@ -33,7 +33,7 @@ public class MergeSort {
     }
 
     private static void merge(int[] arr, int[] left, int[] right, int leftIndex, int rightIndex, int arrIndex){
-        if(arrIndex == arr.length || (leftIndex == left.length && rightIndex == right.length)){
+        if(leftIndex == left.length && rightIndex == right.length){
             return;
         }
         

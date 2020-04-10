@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class QuickSort {
 
@@ -6,7 +7,8 @@ public class QuickSort {
     */
     private static int parition(int[] arr, int low, int high){
         
-        int pivot = arr[low];
+        //int pivot = arr[low]; // this assumption will cause our algorithm to be nlogn in avarage time.
+        int pivot = arr[getRandomNumberInRange(low, high)]; // randomization will solve this problem
         int i = low, j = high;
 
         while(i < j){
@@ -46,4 +48,14 @@ public class QuickSort {
         }
 
     }
+
+    private static int getRandomNumberInRange(int min, int max) {
+
+		if (min >= max) {
+			throw new IllegalArgumentException("max must be greater than min");
+		}
+
+		Random r = new Random();
+		return r.nextInt((max - min) + 1) + min;
+	}
 }

@@ -4,8 +4,9 @@
 public class Main {
 
     public static void main(String[] args) {  
-        int[] arr = {6, 2, 7, 50, 23, 11, 10, 8, 9, 32, 0, 54};
-        MergeSort.mergeSort(arr);
+        int[] arr = {1, 2, 12, 33, 22,  10};
+        // MergeSort.mergeSort(arr);
+        QuickSort.quickSort(arr);
         for(Integer i: arr){
             System.out.print(i + " ");
         }

@@ -1,11 +1,12 @@
-package DynamicProgramming;
-class LcsNode{
+package Solutions;
+
+class LcsNode {
     
     private int x;
     private int y;
     private int value;
     
-    public LcsNode(int x, int y, int value) {
+    public LcsNode(final int x, final int y, final int value) {
         this.x = x;
         this.y = y;
         this.value = value;
@@ -14,14 +15,15 @@ class LcsNode{
     public int getX() { return x; }
     public int getY() { return y; }
     public int getValue() { return value; }
-    public void setX(int x) { this.x = x; }
-    public void setY(int y) { this.y = y; }
-    public void setValue(int value) { this.value = value; }
+    public void setX(final int x) { this.x = x; }
+    public void setY(final int y) { this.y = y; }
+    public void setValue(final int value) { this.value = value; }
 }
 
-class LisLcs {
-    public static void main(String[ ] args) {
-        int[] a = {10, 9, 20, 33, 24, 1, 30, 40, 50, 60};
+public class LisLcs {
+
+    public static void main(final String[ ] args) {
+        final int[] a = {10, 9, 20, 33, 24, 1, 30, 40, 50, 60};
         System.out.println(lis(a));
         lcs("ABCD","ACBAD");
     }
@@ -29,8 +31,8 @@ class LisLcs {
     /*
         Longest increasing subsequence (O(n^2)), Can be improved with binary search
     */
-    public static int lis(int[] arr){
-        int[] temp = new int[arr.length];
+    public static int lis(final int[] arr){
+        final int[] temp = new int[arr.length];
         
         for(int i = 0; i < temp.length; i++){
             temp[i] = 1;
@@ -56,11 +58,11 @@ class LisLcs {
     /*
         Longest common subsequence problem (O(n^2))
     */
-     public static void lcs(String a, String b) {
+     public static void lcs(final String a, final String b) {
         
-        int rows = a.length() + 1, columns = b.length() + 1;
+        final int rows = a.length() + 1, columns = b.length() + 1;
         
-        LcsNode[][] result = new LcsNode[rows][columns];
+        final LcsNode[][] result = new LcsNode[rows][columns];
         
         /* Initilizer
             000000
@@ -71,25 +73,25 @@ class LisLcs {
         */
         
         for(int i = 0; i < columns; i++){
-            LcsNode lcsNode = new LcsNode(0, i, 0);
+            final LcsNode lcsNode = new LcsNode(0, i, 0);
             result[0][i] = lcsNode;
         }
         
         for(int i = 0; i < rows; i++){
-            LcsNode lcsNode = new LcsNode(i, 0, 0);
+            final LcsNode lcsNode = new LcsNode(i, 0, 0);
             result[i][0] = lcsNode;
         }
         
         for(int i = 1; i < rows; i++){
             for(int j = 1; j < columns; j++){
                 if(a.charAt(i - 1) == b.charAt(j - 1)){
-                    int value = result[i - 1][j - 1].getValue() + 1;
-                    LcsNode lcsNode = new LcsNode(i - 1, j - 1, value);
+                    final int value = result[i - 1][j - 1].getValue() + 1;
+                    final LcsNode lcsNode = new LcsNode(i - 1, j - 1, value);
                     result[i][j] = lcsNode;
                 }else{
                     LcsNode lcsNode = null;
-                    int value1 = result[i - 1][j].getValue();
-                    int value2 = result[i][j - 1].getValue();
+                    final int value1 = result[i - 1][j].getValue();
+                    final int value2 = result[i][j - 1].getValue();
                     if(value1 > value2){
                         lcsNode = new LcsNode(i - 1, j, value1);
                     }

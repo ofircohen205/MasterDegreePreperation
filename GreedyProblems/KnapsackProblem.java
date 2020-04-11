@@ -1,5 +1,3 @@
-package GreedyProblems;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -103,9 +101,9 @@ public class KnapsackProblem {
 
         Collections.sort(this.items, new Comparator<Item>() {
             public int compare(Item i1, Item i2) {
-               return i2.compareTo(i1);
+                return i2.compareTo(i1);
             }
-         });
+        });
 
         int index = 0;
 

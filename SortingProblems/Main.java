@@ -18,6 +18,8 @@ public class Main {
         int[] arr2 = {170, 45, 75, 90, 802, 24, 2, 66};
         Double[] arr3 = {0.12, 0.17, 0.21, 0.23, 0.26, 0.19, 0.94, 0.21, 0.12, 0.23, 0.68};
 
+        System.out.println("Number of inversion in array is: " + CountInversions.countInversions(arr));
+
         MergeSort.mergeSort(arr);
         printArray(arr);
         LinearSort.countingSort(arr1);

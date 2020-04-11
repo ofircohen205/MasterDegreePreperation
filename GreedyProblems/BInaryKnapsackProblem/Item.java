@@ -1,5 +1,5 @@
 
-public class Item {
+public class Item implements Comparable {
     private int profit, weight, specificWeight;
     
     public Item(int profit, int weight){

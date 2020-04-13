@@ -12,10 +12,16 @@ public class Polynom {
     private double[] coeffs;
     private int degree;
 
-    // TODO: Padding with 0 in case of coeffs length smaller the degree
-    public Polynom(double[] coeffs, int degree){
+    public Polynom(double[] coeffs){
+        
+        if(coeffs == null || coeffs.length == 0) {
+            this.coeffs = new double[0];
+            this.degree = 0;
+            return;
+         }
+
         this.coeffs = coeffs;
-        this.degree = degree;
+        this.degree = coeffs.length;
     }
 
     public double[] getCoeffs() {
@@ -30,18 +36,13 @@ public class Polynom {
         return degree;
     }
 
-    public void setDegree(int degree) {
-        this.degree = degree;
-    }
-
     // horners rule to evaluate x, complexity (O(n))
     private double hornersRule(double x){
-        if(degree == 0 || coeffs.length == 0)
-            return 0;
-
-        double result = coeffs[0];
-        for(int i = 1; i < degree; i++){
-            result = result + x * coeffs[i];
+        
+        double result = 0;
+        
+        for(int i = degree - 1; i >= 0; i--){
+            result = coeffs[i] + x * result;
         }
 
         return result;
@@ -70,7 +71,7 @@ public class Polynom {
             coeffs[k++] = p2.getCoeffs()[j++];
         }
 
-        return new Polynom(coeffs, degree);
+        return new Polynom(coeffs);
     }
 
     // using FFT we can multiply 2 polynoms in O(nlogn)
@@ -92,6 +93,16 @@ public class Polynom {
             resultSamples[k++] = this.coeffs[i++] * p2.getCoeffs()[j++];
         }
 
-        return new Polynom(FastFourierTransform.IFFT(resultSamples), degree);
+        return new Polynom(FastFourierTransform.IFFT(resultSamples));
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder poly = new StringBuilder().append("f(x) = " + this.coeffs[0]);
+        for(int i = 1; i < this.degree; i++){
+            String term = this.coeffs[i] > 0 ? " + " + this.coeffs[i] + "x^" + i : " " + this.coeffs[i] + "x^" + i;
+            poly.append(term);
+        }
+        return poly.toString();
     }
 }

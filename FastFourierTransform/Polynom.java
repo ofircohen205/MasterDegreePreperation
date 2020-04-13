@@ -1,5 +1,7 @@
 package FastFourierTransform;
 
+import FastFourierTransform.Utils.Complex;
+
 /*
  This class will represent polynom object.
  The class will include API for: 
@@ -82,15 +84,15 @@ public class Polynom {
         // multiple them in O(n)          
         // convert result vector to coeff vector INVERSE_FFT(result_vector)
 
-        double[] p1Samples = FastFourierTransform.FFT(this.coeffs);
-        double[] p2Samples = FastFourierTransform.FFT(p2.getCoeffs());
+        Complex[] p1Samples = FastFourierTransform.FFT(this.coeffs);
+        Complex[] p2Samples = FastFourierTransform.FFT(p2.getCoeffs());
 
         int degree = p1Samples.length + p2Samples.length - 1;
-        double[] resultSamples = new double[degree];
+        Complex[] resultSamples = new Complex[degree];
 
         int i = 0, j = 0, k = 0;
         while(i < this.degree && j < p2.getDegree()){
-            resultSamples[k++] = this.coeffs[i++] * p2.getCoeffs()[j++];
+            resultSamples[k++] = p1Samples[i++].times(p2Samples[j++]);
         }
 
         return new Polynom(FastFourierTransform.IFFT(resultSamples));

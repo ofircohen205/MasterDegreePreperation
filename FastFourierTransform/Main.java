@@ -6,12 +6,14 @@ package FastFourierTransform;
 public class Main {
 
     public static void main(String[] args) {
-        double[] coeffs = {1, 2, -3, 4};
-        double[] coeffs2 = {12, 22};
+        double[] coeffs = new double[4];
+        
+        for(int i = 0; i < 4; i++){
+            coeffs[i] = i + 1;
+        }
+
         Polynom p1 = new Polynom(coeffs);
-        Polynom p2 = new Polynom(coeffs2);
         System.out.println(p1);
-        System.out.println(p2);
-        System.out.println(p1.getDegree());
+        
     }
 }

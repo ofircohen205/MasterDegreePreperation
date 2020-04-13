@@ -66,7 +66,7 @@ public class Polynom {
         }
 
         while(j < p2.getDegree()){
-            coeffs[k++] = this.coeffs[j++];
+            coeffs[k++] = p2.getCoeffs()[j++];
         }
 
         return new Polynom(coeffs, degree);

@@ -35,7 +35,7 @@ public class Polynom {
     }
 
     // horners rule to evaluate x, complexity (O(n))
-    public double hornersRule(double x){
+    private double hornersRule(double x){
         if(degree == 0 || coeffs.length == 0)
             return 0;
 
@@ -47,7 +47,11 @@ public class Polynom {
         return result;
     }
 
-    public Polynom evaluation(Polynom p2){
+    public double evaluation(double x){
+        return hornersRule(x);
+    }
+
+    public Polynom addition(Polynom p2){
         return null;
     }
 

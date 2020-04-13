@@ -19,12 +19,12 @@ public class FastFourierTransform {
     private double tau = Math.PI * 2;
 
     // FFT O(nlogn)
-    public static double[] FFT(){
+    public static double[] FFT(double[] coeffs){
         return null;
     }
 
     // Inverse FFT O(nlogn)
-    public static double[] IFFT(){
+    public static double[] IFFT(double[] samples){
         return null;
     }
 }

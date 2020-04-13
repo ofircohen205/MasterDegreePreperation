@@ -80,7 +80,18 @@ public class Polynom {
         // convert p2 to samplse vector   FFT(p2.coeff)
         // multiple them in O(n)          
         // convert result vector to coeff vector INVERSE_FFT(result_vector)
-        // return it
-        return null;
+
+        double[] p1Samples = FastFourierTransform.FFT(this.coeffs);
+        double[] p2Samples = FastFourierTransform.FFT(p2.getCoeffs());
+
+        int degree = p1Samples.length + p2Samples.length - 1;
+        double[] resultSamples = new double[degree];
+
+        int i = 0, j = 0, k = 0;
+        while(i < this.degree && j < p2.getDegree()){
+            resultSamples[k++] = this.coeffs[i++] * p2.getCoeffs()[j++];
+        }
+
+        return new Polynom(FastFourierTransform.IFFT(resultSamples), degree);
     }
 }

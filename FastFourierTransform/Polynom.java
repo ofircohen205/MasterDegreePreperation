@@ -75,6 +75,12 @@ public class Polynom {
 
     // using FFT we can multiply 2 polynoms in O(nlogn)
     public Polynom multiplication(Polynom p2){
+
+        // convert this to samples vector FFT(this.coeff)
+        // convert p2 to samplse vector   FFT(p2.coeff)
+        // multiple them in O(n)          
+        // convert result vector to coeff vector INVERSE_FFT(result_vector)
+        // return it
         return null;
     }
 }

@@ -33,7 +33,7 @@ public class Polynom {
     }
 
     public int getDegree() {
-        return degree;
+        return degree > 0 ? degree - 1 : 0;
     }
 
     // horners rule to evaluate x, complexity (O(n))

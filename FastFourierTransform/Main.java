@@ -12,5 +12,6 @@ public class Main {
         Polynom p2 = new Polynom(coeffs2);
         System.out.println(p1);
         System.out.println(p2);
+        System.out.println(p1.getDegree());
     }
 }

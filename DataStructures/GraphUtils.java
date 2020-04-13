@@ -1,9 +1,11 @@
+package DataStructures;
+
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.Stack;
 
-import WightedDirectedGraph.Graph;
-import WightedDirectedGraph.Vertex;
+import DataStructures.WightedDirectedGraph.Graph;
+import DataStructures.WightedDirectedGraph.Vertex;
 
 /**
  * GraphUtils

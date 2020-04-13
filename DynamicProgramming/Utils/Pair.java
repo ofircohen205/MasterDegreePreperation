@@ -1,4 +1,4 @@
-package Utils;
+package DynamicProgramming.Utils;
 
 public class Pair<F, S> {
 

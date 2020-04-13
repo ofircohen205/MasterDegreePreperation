@@ -1,4 +1,4 @@
-package Solutions;
+package DynamicProgramming.Solutions;
 
 /**
  * MatrixMult inpit: array of integers represent the matrix dimension such as:

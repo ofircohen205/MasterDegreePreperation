@@ -1,4 +1,4 @@
-package AvlTree;
+package DataStructures.AvlTree;
 
 public class Node<T> {
     

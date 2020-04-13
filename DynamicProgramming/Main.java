@@ -1,8 +1,11 @@
+package DynamicProgramming;
+
 import java.util.Arrays;
 import java.util.List;
 
-import Solutions.*;
-import Utils.Pair;
+import DynamicProgramming.Solutions.*;
+import DynamicProgramming.Utils.Pair;
+
 
 public class Main {
 

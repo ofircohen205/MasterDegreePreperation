@@ -1,11 +1,12 @@
-package Solutions;
+package DynamicProgramming.Solutions;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import Utils.Pair;
+import DynamicProgramming.Utils.Pair;
+
 
 /**
  * BinaryKnapsackProblem

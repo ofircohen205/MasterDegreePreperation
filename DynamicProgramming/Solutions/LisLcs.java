@@ -1,4 +1,4 @@
-package Solutions;
+package DynamicProgramming.Solutions;
 
 class LcsNode {
     

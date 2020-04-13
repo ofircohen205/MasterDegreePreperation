@@ -1,3 +1,5 @@
+package SortingProblems;
+
 import java.util.*;
 
 public class LinearSort {

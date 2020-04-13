@@ -58,7 +58,7 @@ public class Polynom {
 
         int i = 0, j = 0, k = 0;
         while(i < this.degree && j < p2.getDegree()){
-            coeffs[k++] = this.coeffs[i++] + p2.coeffs[j++];
+            coeffs[k++] = this.coeffs[i++] + p2.getCoeffs()[j++];
         }
 
         while(i < this.degree){

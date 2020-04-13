@@ -49,6 +49,7 @@ public class JobSchedulingProblem {
             cloned.remove(jobToAdd);
             for (Job job : cloned) {
                 if(job.getStart() < jobToAdd.getEnd()) {
+                    System.out.println(job + " " + jobToAdd);
                     toRemove.add(job);
                 }
             }

@@ -1,5 +1,4 @@
-package Solutions;
-
+package DynamicProgramming.Solutions;
 /**
  * HighLowEffortTasksProblem
  */

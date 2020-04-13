@@ -1,3 +1,5 @@
+package Searching;
+
 /**
  * Main
  */
@@ -14,7 +16,7 @@ public class Main {
         The recursion formula is: t(n) = t(n/2) + 1
         From master theorm a = 1, b = 2, f(n) = 1 -> f(n) = theta(n^0) therfore t(n) = O(log(n))
     */
-    public static boolean recursiveBinarySearch(E[] arr, int low, int high, E query){
+    public static boolean recursiveBinarySearch(int[] arr, int low, int high, int query){
         if(low > high){
             return false;
         }
@@ -32,6 +34,6 @@ public class Main {
             high = mid - 1;
         }
 
-        return recursiceBinarySearch(arr, low, high, query);
+        return recursiveBinarySearch(arr, low, high, query);
     }
 }

@@ -1,3 +1,5 @@
+package SortingProblems;
+
 public class MergeSort {
 
     /*
@@ -30,9 +32,34 @@ public class MergeSort {
             right[i] = arr[mid + i + 1];
         }
 
-        merge(arr, left, right, 0, 0, low);
+        int aindex = 0, bindex = 0, arrindex = low;
+		
+		while(aindex < left.length && bindex < right.length) {
+			if(left[aindex] <= right[bindex]) {
+				arr[arrindex] = left[aindex];
+				aindex++;
+			}else {
+				arr[arrindex] = right[bindex];
+				bindex++;
+            }
+            
+			arrindex++;
+		}
+		
+		while(aindex < left.length && bindex >= right.length) {
+			arr[arrindex] = left[aindex];
+			aindex++;
+			arrindex++;
+		}
+		
+		while(bindex < right.length && aindex >= left.length) {
+			arr[arrindex] = right[bindex];
+			bindex++;
+			arrindex++;
+		}
     }
 
+    // Unefficient
     private static void merge(int[] arr, int[] left, int[] right, int leftIndex, int rightIndex, int arrIndex){
         if(leftIndex == left.length && rightIndex == right.length){
             return;

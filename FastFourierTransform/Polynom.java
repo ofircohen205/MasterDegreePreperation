@@ -9,20 +9,20 @@ package FastFourierTransform;
 */
 public class Polynom {
 
-    private int[] coeffs;
+    private double[] coeffs;
     private int degree;
 
     // TODO: Padding with 0 in case of coeffs length smaller the degree
-    public Polynom(int[] coeffs, int degree){
+    public Polynom(double[] coeffs, int degree){
         this.coeffs = coeffs;
         this.degree = degree;
     }
 
-    public int[] getCoeffs() {
+    public double[] getCoeffs() {
         return coeffs;
     }
 
-    public void setCoeffs(int[] coeffs) {
+    public void setCoeffs(double[] coeffs) {
         this.coeffs = coeffs;
     }
 
@@ -52,7 +52,24 @@ public class Polynom {
     }
 
     public Polynom addition(Polynom p2){
-        return null;
+
+        int degree = Math.max(this.degree, p2.getDegree());
+        double[] coeffs = new double[degree];
+
+        int i = 0, j = 0, k = 0;
+        while(i < this.degree && j < p2.getDegree()){
+            coeffs[k++] = this.coeffs[i++] + p2.coeffs[j++];
+        }
+
+        while(i < this.degree){
+            coeffs[k++] = this.coeffs[i++];
+        }
+
+        while(j < p2.getDegree()){
+            coeffs[k++] = this.coeffs[j++];
+        }
+
+        return new Polynom(coeffs, degree);
     }
 
     public Polynom multiplication(Polynom p2){

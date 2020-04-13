@@ -51,6 +51,7 @@ public class Polynom {
         return hornersRule(x);
     }
 
+    // adding the 2 vectors of coeffs, complexity (O(n))
     public Polynom addition(Polynom p2){
 
         int degree = Math.max(this.degree, p2.getDegree());
@@ -72,6 +73,7 @@ public class Polynom {
         return new Polynom(coeffs, degree);
     }
 
+    // using FFT we can multiply 2 polynoms in O(nlogn)
     public Polynom multiplication(Polynom p2){
         return null;
     }

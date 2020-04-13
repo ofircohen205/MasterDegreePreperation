@@ -9,12 +9,42 @@ package FastFourierTransform;
 */
 public class Polynom {
 
-    public Polynom(){
+    private int[] coeffs;
+    private int degree;
 
+    // TODO: Padding with 0 in case of coeffs length smaller the degree
+    public Polynom(int[] coeffs, int degree){
+        this.coeffs = coeffs;
+        this.degree = degree;
     }
 
-    public double hornerRule(double x){
-        return 0;
+    public int[] getCoeffs() {
+        return coeffs;
+    }
+
+    public void setCoeffs(int[] coeffs) {
+        this.coeffs = coeffs;
+    }
+
+    public int getDegree() {
+        return degree;
+    }
+
+    public void setDegree(int degree) {
+        this.degree = degree;
+    }
+
+    // horners rule to evaluate x, complexity (O(n))
+    public double hornersRule(double x){
+        if(degree == 0 || coeffs.length == 0)
+            return 0;
+
+        double result = coeffs[0];
+        for(int i = 1; i < degree; i++){
+            result = result + x * coeffs[i];
+        }
+
+        return result;
     }
 
     public Polynom evaluation(Polynom p2){

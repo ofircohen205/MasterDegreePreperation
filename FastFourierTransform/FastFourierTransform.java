@@ -12,8 +12,19 @@ package FastFourierTransform;
  with FFT, polynom that represented with his coeffs can be converted to samples representation and vice versa in O(nlogn)
 
 */
-public class FFT {
+public class FastFourierTransform {
 
-    
+    // create unity cycle -> xK e^(ijk2*pi)/n
+    // create the complex conjugate of xK e^(-ijk2*pi)/n
+    private double tau = Math.PI * 2;
 
+    // FFT O(nlogn)
+    public static double[] FFT(){
+        return null;
+    }
+
+    // Inverse FFT O(nlogn)
+    public static double[] IFFT(){
+        return null;
+    }
 }

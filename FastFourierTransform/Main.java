@@ -11,6 +11,6 @@ public class Main {
         Polynom p1 = new Polynom(coeffs);
         Polynom p2 = new Polynom(coeffs2);
         System.out.println(p1);
-        System.out.println(p1.evaluation(3));
+        System.out.println(p2);
     }
 }

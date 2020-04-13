@@ -60,6 +60,7 @@ public class MergeSort {
     }
 
     // Unefficient
+    @SuppressWarnings("unused")
     private static void merge(int[] arr, int[] left, int[] right, int leftIndex, int rightIndex, int arrIndex){
         if(leftIndex == left.length && rightIndex == right.length){
             return;

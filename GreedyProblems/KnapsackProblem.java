@@ -25,7 +25,6 @@ class Pair<F, S> {
     }
 }
 
-
 class Item implements Comparable {
 
     private int profit, weight, specificWeight;

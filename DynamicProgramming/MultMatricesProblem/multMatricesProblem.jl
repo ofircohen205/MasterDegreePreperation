@@ -1,4 +1,4 @@
-function multMatrices(vectorP::Array, size::Int)
+function multMatrices(vectorP::Vector, size::Int)
     M = zeros(size, size)
     S = zeros(size, size)
     for i in 1:size, j in 1:size
